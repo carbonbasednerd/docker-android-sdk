@@ -9,3 +9,5 @@ RUN cd /opt \
     && rm -f android-sdk.tgz
 
 RUN echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.2,android-25,extra-google-m2repository,extra-google-google_play_services,extra-android-m2repository
+
+CMD [ "android" ]
