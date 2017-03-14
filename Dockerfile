@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM webratio/ant
 
 # For running 32 bit Android tools
 RUN dpkg --add-architecture i386 && \
