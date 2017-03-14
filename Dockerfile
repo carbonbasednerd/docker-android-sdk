@@ -1,7 +1,7 @@
 FROM openjdk:8
 
 ENV ANDROID_HOME /opt/android-sdk-linux		
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+# ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 RUN cd /opt \
     && wget -q https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -O android-sdk.tgz \
