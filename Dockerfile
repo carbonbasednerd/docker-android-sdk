@@ -1,5 +1,6 @@
 FROM openjdk:8
 
+# For running 32 bit Android tools
 RUN dpkg --add-architecture i386 && \
     apt-get update -y && \
     apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 && \
