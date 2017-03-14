@@ -1,5 +1,12 @@
 FROM openjdk:8
 
+RUN dpkg --add-architecture i386 && \
+    apt-get update -y && \
+    apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get autoremove -y && \
+    apt-get clean
+
 ENV ANDROID_HOME /android/android-sdk-linux		
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
