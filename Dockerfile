@@ -61,4 +61,4 @@ RUN wget -q https://dl.google.com/android/repository/tools_r25.2.3-linux.zip?hl=
 	&& unzip /opt/tools.zip -d $ANDROID_HOME \
 	&& rm -f /opt/tools.zip
 
-RUN echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.2,android-25,extra-google-m2repository,extra-google-google_play_services,extra-android-m2repository
+RUN echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.3,android-25,extra-google-m2repository,extra-google-google_play_services,extra-android-m2repository
