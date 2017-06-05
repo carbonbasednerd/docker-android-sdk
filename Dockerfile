@@ -27,7 +27,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -y \
+	&& apt-get install -t jessie-backports -y \
 		openjdk-8-jdk \
 		ca-certificates-java \
 	&& rm -rf /var/lib/apt/lists/* \
