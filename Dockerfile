@@ -1,4 +1,4 @@
-FROM futurenda/buildpack:v1.15.0
+FROM futurenda/buildpack:v1.19.0
 
 # openjdk:8
 
@@ -25,23 +25,13 @@ RUN { \
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-ENV JAVA_VERSION 8u121
-ENV JAVA_DEBIAN_VERSION 8u121-b13-1~bpo8+1
-
-# see https://bugs.debian.org/775775
-# and https://github.com/docker-library/java/issues/19#issuecomment-70546872
-ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1
-
 RUN set -x \
 	&& apt-get update \
 	&& apt-get install -y \
-		openjdk-8-jdk="$JAVA_DEBIAN_VERSION" \
-		ca-certificates-java="$CA_CERTIFICATES_JAVA_VERSION" \
+		openjdk-8-jdk \
+		ca-certificates-java \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
-
-# see CA_CERTIFICATES_JAVA_VERSION notes above
-RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure
 
 
 ENV ANDROID_HOME /opt/android-sdk-linux
