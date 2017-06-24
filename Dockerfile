@@ -35,7 +35,7 @@ RUN set -x \
 
 
 ENV ANDROID_HOME /opt/android-sdk-linux
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
 # For running 32 bit Android tools
 RUN dpkg --add-architecture i386 && \
@@ -51,4 +51,4 @@ RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-3952940.zip
 	&& unzip /opt/tools.zip -d $ANDROID_HOME \
 	&& rm -f /opt/tools.zip
 
-RUN echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-26.0.0,android-25,extra-google-m2repository,extra-google-google_play_services
+RUN yes | sdkmanager 'build-tools;26.0.0' 'extras;google;m2repository' 'platform-tools' 'platforms;android-25' 'tools'
