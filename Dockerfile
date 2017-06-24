@@ -47,7 +47,7 @@ RUN dpkg --add-architecture i386 && \
 
 RUN mkdir -p $ANDROID_HOME
 
-RUN wget -q https://dl.google.com/android/repository/tools_r25.2.3-linux.zip?hl=zh-cn -O /opt/tools.zip \
+RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-3952940.zip -O /opt/tools.zip \
 	&& unzip /opt/tools.zip -d $ANDROID_HOME \
 	&& rm -f /opt/tools.zip
 
