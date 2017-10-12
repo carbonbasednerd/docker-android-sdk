@@ -47,7 +47,8 @@ RUN dpkg --add-architecture i386 && \
 
 RUN mkdir -p $ANDROID_HOME
 
-RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-3952940.zip -O /opt/tools.zip \
+# Android SDK Tools 26.1.1
+RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O /opt/tools.zip \
 	&& unzip /opt/tools.zip -d $ANDROID_HOME \
 	&& rm -f /opt/tools.zip
 
