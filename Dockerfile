@@ -52,4 +52,4 @@ RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 	&& unzip /opt/tools.zip -d $ANDROID_HOME \
 	&& rm -f /opt/tools.zip
 
-RUN yes | sdkmanager 'build-tools;26.0.1' 'extras;google;m2repository' 'platform-tools' 'platforms;android-26' 'tools'
+RUN yes | sdkmanager 'build-tools;27.0.3' 'extras;google;m2repository' 'platform-tools' 'platforms;android-27' 'tools'
