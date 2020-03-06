@@ -1,4 +1,4 @@
-FROM futurenda/buildpack:v1.19.0
+FROM futurenda/buildpack:v1.44.0
 
 # openjdk:8
 
